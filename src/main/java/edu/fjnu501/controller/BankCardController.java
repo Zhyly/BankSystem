@@ -19,8 +19,13 @@ public class BankCardController {
 
     @RequestMapping(value = "/add")
     @ResponseBody
-    public void addBankCard(@RequestBody BankCard bankCard) {
-        bankCardService.addBankCard(bankCard);
+    public Result addBankCard(@RequestBody BankCard bankCard) {
+        try {
+            bankCardService.addBankCard(bankCard);
+        } catch (Exception e) {
+            return new Result(500, "添加失败", null);
+        }
+        return new Result(200, "更新成功", null);
     }
 
     @RequestMapping(value = "/get/{uid}")
