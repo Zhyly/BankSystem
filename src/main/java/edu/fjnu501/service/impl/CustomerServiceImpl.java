@@ -34,7 +34,7 @@ public class CustomerServiceImpl implements CustomerService {
     }
 
     @Override
-    public void registerAccount(Customer customer) throws ParseException {
+    public String registerAccount(Customer customer) throws ParseException {
         // 获取随机账号名(时间戳+maxId)
         String userName = RandomUsername.getRandomUserName(customerMapper.findMaxId());
         customer.setUsername(userName);
@@ -42,6 +42,8 @@ public class CustomerServiceImpl implements CustomerService {
         String md5Pwd = MD5Password.MD5Pwd(customer);
         customer.setPassword(md5Pwd);
         customerMapper.registerAccount(customer);
+
+        return userName;
     }
 
     @Override

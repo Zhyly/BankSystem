@@ -33,13 +33,14 @@ public class CustomerController {
     @RequestMapping(value = {"/register"})
     @ResponseBody
     public Result register(@RequestBody Customer customer) {
+        String username = null;
         try {
-            customerService.registerAccount(customer);
+            username = customerService.registerAccount(customer);
         } catch (Exception e) {
             e.printStackTrace();
             return new Result(500, "注册失败", null);
         }
-        return new Result(200, "注册成功", null);
+        return new Result(200, "注册成功", username);
     }
 
     @RequestMapping(value = {"/login"}, method = RequestMethod.POST)

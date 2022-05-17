@@ -10,7 +10,7 @@ public interface CustomerService {
     Customer getCustomerInfoByUid(int uid);
 
     // 注册账号
-    void registerAccount(Customer customer) throws ParseException;
+    String registerAccount(Customer customer) throws ParseException;
 
     // 登录后获取信息
     void getUserInfoAfterLogin(Customer customer);
