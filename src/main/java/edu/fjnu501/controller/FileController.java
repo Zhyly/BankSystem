@@ -26,12 +26,18 @@ public class FileController {
     @RequestMapping(value = "/avatar")
     @ResponseBody
     public Result downloadAvatar(int uid, MultipartFile avatarImg, HttpServletRequest request) {
+        if (avatarImg.getSize() >= 1048576) {
+            return new Result(413, "头像文件不得超过1M", null);
+        } else if (avatarImg.getSize() == 0) {
+            return new Result(500, "头像文件不能为空", null);
+        }
+        UUID uuid = UUID.randomUUID();
+        String path = request.getSession().getServletContext().getRealPath("/") + "avatar/";
+        String[] src = avatarImg.getOriginalFilename().split("\\.");
+        String suffix = src[src.length - 1];
+        String fileName = null;
         try {
-            String path = request.getSession().getServletContext().getRealPath("/") + "avatar\\";
-            UUID uuid = UUID.randomUUID();
-            String[] src = avatarImg.getOriginalFilename().split("\\.");
-            String suffix = src[src.length - 1];
-            String fileName = uuid + "." + suffix;
+            fileName = uuid + "." + suffix;
             avatarImg.transferTo(new File(path + fileName));
             // 保存UUID至数据库
             Customer customer = new Customer();
@@ -41,7 +47,7 @@ public class FileController {
         } catch (Exception e) {
             return new Result(500, "更新头像失败", null);
         }
-        return new Result(200, "更新头像成功", null);
+        return new Result(200, "更新头像成功", fileName);
     }
 
     @RequestMapping(value = {"/avatar/get/{uid}"})
