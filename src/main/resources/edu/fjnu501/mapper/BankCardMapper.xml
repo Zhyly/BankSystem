@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="edu.fjnu501.mapper.BankCardMapper">
+
+    <insert id="addBankCard" parameterType="bankCard">
+        insert into bank_card values (#{cid}, #{uid}, #{balance})
+    </insert>
+
+    <select id="findBankCardsByUid" parameterType="int" resultType="bankCard">
+        select * from bank_card where uid = #{uid}
+    </select>
+
+    <update id="updateBalance" parameterType="order">
+        update bank_card set balance = balance + #{amount} where cid = #{cid}
+    </update>
+
+    <delete id="deleteCard" parameterType="int">
+        delete from bank_card where cid = #{cid}
+    </delete>
+
+    <select id="findBalance" parameterType="int" resultType="double">
+        select balance from bank_card where cid = #{cid}
+    </select>
+
+    <select id="findUidByCid" parameterType="int" resultType="int">
+        select uid from bank_card where cid = #{cid}
+    </select>
+
+</mapper>
