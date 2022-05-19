@@ -81,6 +81,8 @@ public class CustomerController {
     public Result updateInfo(@RequestBody Customer customer) {
         try {
             customerService.updateInfo(customer);
+        } catch (RuntimeException e) {
+          return new Result(400, "身份证重复", null);
         } catch (Exception e) {
             e.printStackTrace();
             return new Result(500, "更新失败", null);

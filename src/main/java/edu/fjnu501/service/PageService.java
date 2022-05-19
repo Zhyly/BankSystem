@@ -8,8 +8,8 @@ import java.util.List;
 
 public interface PageService {
 
-    List<Order> getOrderInfoByPage(Page page);
+    Page getOrderInfoByPage(Page page);
 
-    List<BankCard> getCardInfoByPage(Page page);
+    Page getCardInfoByPage(Page page);
 
 }

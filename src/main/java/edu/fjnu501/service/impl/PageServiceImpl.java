@@ -1,6 +1,7 @@
 package edu.fjnu501.service.impl;
 
 import com.github.pagehelper.PageHelper;
+import com.github.pagehelper.PageInfo;
 import edu.fjnu501.domain.BankCard;
 import edu.fjnu501.domain.Order;
 import edu.fjnu501.domain.Page;
@@ -22,14 +23,24 @@ public class PageServiceImpl implements PageService {
     private BankCardMapper bankCardMapper;
 
     @Override
-    public List<Order> getOrderInfoByPage(Page page) {
+    public Page getOrderInfoByPage(Page page) {
         PageHelper.startPage(page.getPageNum(), page.getPageSize());
-        return orderMapper.getAllOrdersByUid(page.getUid());
+        List<Order> allOrdersByUid = orderMapper.getAllOrdersByUid(page.getUid());
+        PageInfo<Order> pageInfo = new PageInfo<>(allOrdersByUid);
+
+        page.setData(allOrdersByUid);
+        page.setPages(pageInfo.getPages());
+        return page;
     }
 
     @Override
-    public List<BankCard> getCardInfoByPage(Page page) {
+    public Page getCardInfoByPage(Page page) {
         PageHelper.startPage(page.getPageNum(), page.getPageSize());
-        return bankCardMapper.findBankCardsByUid(page.getUid());
+        List<BankCard> bankCardsByUid = bankCardMapper.findBankCardsByUid(page.getUid());
+        PageInfo<BankCard> pageInfo = new PageInfo<>(bankCardsByUid);
+
+        page.setData(bankCardsByUid);
+        page.setPages(pageInfo.getPages());
+        return page;
     }
 }
