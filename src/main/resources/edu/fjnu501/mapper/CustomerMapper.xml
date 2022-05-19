@@ -44,4 +44,8 @@
         select * from customer where username = #{username}
     </select>
 
+    <select id="getAllIdentityNumber" resultType="string">
+        select identity_number from customer
+    </select>
+
 </mapper>

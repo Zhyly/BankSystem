@@ -17,4 +17,6 @@ public interface CustomerService {
 
     void updateInfo(Customer customer);
 
+    boolean checkIdentityNumber(Customer customer);
+
 }

@@ -23,4 +23,6 @@ public interface CustomerMapper {
 
     Customer getUserByUsername(String username);
 
+    String[] getAllIdentityNumber();
+
 }

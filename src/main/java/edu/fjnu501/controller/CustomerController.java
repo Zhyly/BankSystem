@@ -36,6 +36,8 @@ public class CustomerController {
         String username = null;
         try {
             username = customerService.registerAccount(customer);
+        } catch (RuntimeException e) {
+          return new Result(400, e.getMessage(), null);
         } catch (Exception e) {
             e.printStackTrace();
             return new Result(500, "注册失败", null);

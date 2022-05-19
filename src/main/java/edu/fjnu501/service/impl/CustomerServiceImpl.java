@@ -35,6 +35,9 @@ public class CustomerServiceImpl implements CustomerService {
 
     @Override
     public String registerAccount(Customer customer) throws ParseException {
+        if (!checkIdentityNumber(customer)) {
+            throw new RuntimeException("已拥有一个账号");
+        }
         // 获取随机账号名(时间戳+maxId)
         String userName = RandomUsername.getRandomUserName(customerMapper.findMaxId());
         customer.setUsername(userName);
@@ -77,6 +80,17 @@ public class CustomerServiceImpl implements CustomerService {
     @Override
     public void updateInfo(Customer customer) {
         customerMapper.updateInfo(customer);
+    }
+
+    @Override
+    public boolean checkIdentityNumber(Customer customer) {
+        String[] allIdentityNumber = customerMapper.getAllIdentityNumber();
+        for (String identityNumber : allIdentityNumber) {
+            if (identityNumber != null && identityNumber.equals(customer.getIdentityNumber())) {
+                return false;
+            }
+        }
+        return true;
     }
 
 }

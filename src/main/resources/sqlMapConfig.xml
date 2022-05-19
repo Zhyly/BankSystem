@@ -9,4 +9,8 @@
         <package name="edu.fjnu501.domain"/>
     </typeAliases>
 
+    <plugins>
+        <plugin interceptor="com.github.pagehelper.PageInterceptor"/>
+    </plugins>
+
 </configuration>
