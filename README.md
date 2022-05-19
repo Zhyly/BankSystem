@@ -14,8 +14,8 @@
 | http://120.79.139.163/bank/order/transfer                    | 银行卡之间的转账。srcCid是转账发起方的银行卡号，distCid是接收方的银行卡号，uid对应的是转账发起方的UID，amount是转账金额 | ![image-20220518031027272](https://github.com/Adam-ly-captain/SSM/blob/master/img/image-20220518031027272.png)![image-20220518030650655](https://github.com/Adam-ly-captain/SSM/blob/master/img/image-20220518030650655.png) |
 | <form *action*="http://120.79.139.163/bank/file/avatar" *method*="post" *enctype*="multipart/form-data"> | 上传头像，并且返回UUID，可以在公网/bank/avatar下访问该头像[5bc49f28-6a27-4883-b27c-48a803b65c74.png (2560×1600)](http://120.79.139.163/bank/avatar/5bc49f28-6a27-4883-b27c-48a803b65c74.png)，头像大小不得超过1M，且不能为空 | ![image-20220518033157541](https://github.com/Adam-ly-captain/SSM/blob/master/img/image-20220518033157541.png) |
 | http://120.79.139.163/bank/file/avatar/get/{uid}             | 根据用户ID获取UUID                                           | http://120.79.139.163/bank/file/avatar/get/1                 |
-| http://120.79.139.163/page/order                             | 获取分页订单数据                                             | ![image-20220519183147650](https://github.com/Adam-ly-captain/SSM/blob/master/img/image-20220519183147650.png) |
-| http://120.79.139.163/page/card                              | 获取分页银行卡数据                                           | ![image-20220519220528161](https://github.com/Adam-ly-captain/SSM/blob/master/img/image-20220519220528161.png) |
+| http://120.79.139.163/bank/page/order                             | 获取分页订单数据                                             | ![image-20220519183147650](https://github.com/Adam-ly-captain/SSM/blob/master/img/image-20220519183147650.png) |
+| http://120.79.139.163/bank/page/card                              | 获取分页银行卡数据                                           | ![image-20220519220528161](https://github.com/Adam-ly-captain/SSM/blob/master/img/image-20220519220528161.png) |
 
 
 
