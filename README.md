@@ -16,7 +16,7 @@
 | http://120.79.139.163/bank/file/avatar/get/{uid}             | 根据用户ID获取UUID                                           | http://120.79.139.163/bank/file/avatar/get/1                 |
 | http://120.79.139.163/bank/page/order                        | 获取分页订单数据                                             | ![image-20220519183147650](https://github.com/Adam-ly-captain/SSM/blob/master/img/image-20220519183147650.png) |
 | http://120.79.139.163/bank/page/card                         | 获取分页银行卡数据                                           | ![image-20220519220528161](https://github.com/Adam-ly-captain/SSM/blob/master/img/image-20220519220528161.png) |
-| http://120.79.139.163/bank/account/update                    | 更新用户信息，更新时如果输入的身份证号重复则返回错误提示     | ![image-20220519222558141](C:\Users\59845\AppData\Roaming\Typora\typora-user-images\image-20220519222558141.png) |
+| http://120.79.139.163/bank/account/update                    | 更新用户信息，更新时如果输入的身份证号重复则返回错误提示     | ![image-20220519222558141](https://github.com/Adam-ly-captain/SSM/blob/master/img/image-20220519222558141.png) |
 
 
 
