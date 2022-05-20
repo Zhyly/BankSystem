@@ -14,6 +14,7 @@
         <result column="u_uid" property="uuid"/>
         <result column="username" property="username"/>
         <result column="password" property="password"/>
+        <result column="real_name" property="realName"/>
     </resultMap>
 
     <select id="getCustomerInfoByUid" parameterType="int" resultMap="accountInfoMap">
@@ -21,14 +22,14 @@
     </select>
 
     <insert id="registerAccount" parameterType="customer">
-        insert into customer values (#{uid}, #{email}, #{addr}, #{telephone}, #{identityNumber}, #{uuid}, #{username}, #{password})
+        insert into customer values (#{uid}, #{email}, #{addr}, #{telephone}, #{identityNumber}, #{uuid}, #{username}, #{password}, #{realName})
     </insert>
     
     <select id="selectUsername" parameterType="string" resultType="customer">
         select uid from customer where username = #{username}
     </select>
     
-    <select id="login" parameterType="customer" resultType="customer">
+    <select id="login" parameterType="customer" resultMap="accountInfoMap">
         select * from customer where username = #{username} and password = #{password}
     </select>
 
@@ -37,10 +38,10 @@
     </select>
 
     <update id="updateInfo" parameterType="customer">
-        update customer set email = #{email}, addr = #{addr}, telephone = #{telephone}, identity_number = #{identityNumber} where uid = #{uid}
+        update customer set email = #{email}, addr = #{addr}, telephone = #{telephone}, real_name = #{realName} where uid = #{uid}
     </update>
 
-    <select id="getUserByUsername" parameterType="string" resultType="customer">
+    <select id="getUserByUsername" parameterType="string" resultMap="accountInfoMap">
         select * from customer where username = #{username}
     </select>
 

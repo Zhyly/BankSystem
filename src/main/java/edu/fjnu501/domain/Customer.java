@@ -12,13 +12,12 @@ public class Customer {
     private String telephone;
     private String identityNumber;
     private String uuid;
+    private String realName;
 
     private String info;
 
     private List<BankCard> bankCardList;
     private List<Order> orders;
-
-
 
     @Override
     public String toString() {
@@ -31,10 +30,19 @@ public class Customer {
                 ", telephone='" + telephone + '\'' +
                 ", identityNumber='" + identityNumber + '\'' +
                 ", uuid='" + uuid + '\'' +
+                ", realName='" + realName + '\'' +
                 ", info='" + info + '\'' +
                 ", bankCardList=" + bankCardList +
                 ", orders=" + orders +
                 '}';
+    }
+
+    public String getRealName() {
+        return realName;
+    }
+
+    public void setRealName(String realName) {
+        this.realName = realName;
     }
 
     public List<Order> getOrders() {

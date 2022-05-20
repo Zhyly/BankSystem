@@ -79,11 +79,7 @@ public class CustomerServiceImpl implements CustomerService {
 
     @Override
     public void updateInfo(Customer customer) {
-        if (checkIdentityNumber(customer)) {
-            customerMapper.updateInfo(customer);
-        } else {
-            throw new RuntimeException("身份证号重复");
-        }
+        customerMapper.updateInfo(customer);
     }
 
     @Override
