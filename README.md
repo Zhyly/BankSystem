@@ -20,7 +20,24 @@
 
 
 
- 
+
+![image-20230517100013947](https://github.com/Zhyly/BankSystem/assets/96356893/a6c6e3d3-2282-4fee-95e1-be06d278b3b9)
+![image-20230517100030518](https://github.com/Zhyly/BankSystem/assets/96356893/15e1b2c0-b060-4c8d-8b0b-efd329af65cf)
+![image-20230517100045059](https://github.com/Zhyly/BankSystem/assets/96356893/ba39444a-c93d-412c-9532-b355ebbbf32a)
+![image-20230517100058892](https://github.com/Zhyly/BankSystem/assets/96356893/a710aee1-4ce4-4a5b-ba89-844f92e2e626)
+
+
+![image-20230517104012559](https://github.com/Zhyly/BankSystem/assets/96356893/a1a81f78-3fd9-4660-b96f-2d2df353d5a0)
+![Screenshot_2023-05-17-10-59-23-36_e6133c59731d4ff6e280b1fde0f05acc](https://github.com/Zhyly/BankSystem/assets/96356893/1eefa2b9-8a21-4c1d-846c-e8801cf2a895)
 
 
 
+
+
+
+![image-20230517113658843](https://github.com/Zhyly/BankSystem/assets/96356893/ea172ef4-28c0-4c60-8d76-464cfba5c62c)
+![image-20230517113728183](https://github.com/Zhyly/BankSystem/assets/96356893/c2913edb-60a0-4888-8972-59fc9d17dc3d)
+
+![image-20230517114326916](https://github.com/Zhyly/BankSystem/assets/96356893/29cd9e76-d300-4f9f-91c8-c600568100a6)
+![image-20230517114349736](https://github.com/Zhyly/BankSystem/assets/96356893/7ff1d675-8db8-403c-a43e-7120d70bb29e)
+![Screenshot_2023-05-17-10-59-23-36_e6133c59731d4ff6e280b1fde0f05acc](https://github.com/Zhyly/BankSystem/assets/96356893/7c07d08c-5891-4634-a0c3-8d776bcd1c73)
